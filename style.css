@@ -57,6 +57,21 @@ nav a {
   font-weight: 600;
 }
 
+.menu-button {
+  display: none;
+  border: 2px solid var(--ink);
+  background: #fff;
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobile-dock { display: none; }
+
 .cart-button {
   border: 2px solid var(--ink);
   background: white;
@@ -1329,26 +1344,76 @@ footer small {
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
-@media (max-width: 750px) {
-  .topbar { padding: 0 5%; height: 70px; }
-  nav { display: none; }
-  .hero { grid-template-columns: 1fr; padding: 55px 7%; gap: 35px; }
-  .hero-art { height: 500px; }
+@media (max-width: 860px) {
+  body { padding-bottom: 76px; }
+  .topbar { padding: 10px 16px; min-height: 64px; }
+  .menu-button { display: inline-flex; align-items: center; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 6px 12px 12px;
+    background: #fff;
+    border-bottom: 3px solid var(--ink);
+  }
+  nav.is-open { display: flex; }
+  nav a {
+    padding: 14px 8px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .cart-button { padding: 8px 12px; }
+  .hero { grid-template-columns: 1fr; min-height: 0; padding: 28px 16px 36px; gap: 24px; }
+  h1 { font-size: clamp(32px, 10vw, 46px); }
+  .hero-text { font-size: 15px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .primary-button, .ghost-button { justify-content: center; min-height: 48px; width: 100%; }
+  .hero-note { margin-top: 22px; line-height: 1.8; }
+  .hero-art { height: 420px; }
+  .shop-sign { font-size: 18px; }
   .shop-top { margin: 10px 10px 0; }
-  .open-badge { display: none; }
-  .poster, .plant { display: none; }
-  .avatar { width: 76px; }
-  .admins { gap: 2px; bottom: 52px; }
-  .counter { height: 58px; }
-  .products { grid-template-columns: 1fr; max-width: 430px; margin: auto; }
-  .product-visual { height: 280px; }
+  .open-badge, .poster, .plant { display: none; }
+  .avatar { width: 68px; height: 112px; }
+  .admins { gap: 0; bottom: 46px; }
+  .counter { height: 48px; font-size: 10px; }
+  .admin figcaption { font-size: 9px; padding: 2px 6px; }
+  .collection { padding: 48px 16px; }
+  .products { grid-template-columns: 1fr; max-width: none; margin: 0; }
+  .product-visual { height: 240px; }
+  .add-button { min-height: 48px; font-size: 13px; }
   .section-heading { align-items: start; gap: 15px; flex-direction: column; }
-  .care { padding: 65px 8%; display: block; }
-  .care > p { margin-top: 28px; }
-  .intro h2, .care h2, .section-heading h2 { font-size: 30px; }
-  footer { padding: 30px 7%; }
-  .game { grid-template-columns: 1fr; padding: 28px 7% 50px; }
-  .stage { width: min(100%, 380px); }
+  .care { padding: 48px 16px; display: block; }
+  .care > p { margin-top: 20px; }
+  .intro { padding: 56px 16px; }
+  .intro h2, .care h2, .section-heading h2, .game h2 { font-size: 28px; }
+  footer { padding: 28px 16px 24px; grid-template-columns: 1fr; gap: 8px; }
+  .game { grid-template-columns: 1fr; padding: 28px 16px 40px; }
+  .stage { width: 100%; }
+  .lens-choice { flex: 1 1 100%; min-height: 52px; font-size: 15px; }
+  .mobile-dock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    background: #fff;
+    border-top: 3px solid var(--ink);
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+  }
+  .mobile-dock a, .mobile-dock button {
+    min-height: 48px;
+    border: 0;
+    background: transparent;
+    font: 700 13px Outfit, sans-serif;
+    cursor: pointer;
+  }
+  .toast { bottom: 84px; width: calc(100% - 32px); text-align: center; }
 }
 
 .game {

@@ -13,7 +13,8 @@
 <body>
   <header class="topbar">
     <a class="logo" href="#">JUNA<span>★</span></a>
-    <nav>
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav id="siteNav">
       <a href="#colecao">Naruto</a>
       <a href="#cyber">Cyberpunk</a>
       <a href="#geass">Geass</a>
@@ -316,6 +317,12 @@
   </main>
 
   <footer><a class="logo" href="#">JUNA<span>★</span></a><p>Lentes para quem vive em anime.</p><small>© 2026 JUNA. Loja fictícia para fins de demonstração. Visuais inspirados em animes, sem vínculo oficial.</small></footer>
+
+  <nav class="mobile-dock" aria-label="Atalhos">
+    <a href="#colecao">Linhas</a>
+    <a href="#game">Provador</a>
+    <button type="button" id="dockCart">Sacola</button>
+  </nav>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>

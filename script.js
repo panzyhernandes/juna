@@ -21,6 +21,28 @@ document.querySelectorAll('.add-button').forEach((button) => {
   });
 });
 
+const menuButton = document.getElementById('menuButton');
+const siteNav = document.getElementById('siteNav');
+if (menuButton && siteNav) {
+  menuButton.addEventListener('click', () => {
+    const open = siteNav.classList.toggle('is-open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.textContent = open ? 'Fechar' : 'Menu';
+  });
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'Menu';
+    });
+  });
+}
+
+const dockCart = document.getElementById('dockCart');
+if (dockCart) {
+  dockCart.addEventListener('click', () => cartButton.click());
+}
+
 cartButton.addEventListener('click', () => {
   if (!cart.length) {
     showToast('Sua sacola ainda está vazia.');
