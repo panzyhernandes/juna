@@ -18,6 +18,7 @@
       <a href="#cyber">Cyberpunk</a>
       <a href="#geass">Geass</a>
       <a href="#spy">Spy Family</a>
+      <a href="#game">Provador</a>
       <a href="#sobre">O estúdio</a>
       <a href="#cuidados">Cuidados</a>
     </nav>
@@ -30,7 +31,10 @@
         <p class="eyebrow">LOJA DE LENTES DE ANIME</p>
         <h1>Seu anime.<br><em>Seu olhar.</em></h1>
         <p class="hero-text">A JUNA desenha lentes do jeito que o anime desenha o olho: íris grande, pupila marcada e brilho no canto. No balcão, Seo-yoon, Mel, Aurora e Giu cuidam da loja — de brincadeira.</p>
-        <a class="primary-button" href="#colecao">Ver as linhas <span>↗</span></a>
+        <div class="hero-actions">
+          <a class="primary-button" href="#colecao">Ver as linhas <span>↗</span></a>
+          <a class="ghost-button" href="#game">Provar no avatar</a>
+        </div>
         <div class="hero-note"><span class="dot"></span> <a href="#colecao">Naruto</a> · <a href="#cyber">Cyberpunk</a> · <a href="#geass">Code Geass</a> · <a href="#spy">Spy x Family</a></div>
       </div>
       <div class="hero-art" aria-label="Vitrine da loja JUNA. Atrás do balcão estão os avatares de Seo-yoon, Mel, Aurora e Giu, as admins de brincadeira.">
@@ -109,6 +113,22 @@
           <span class="register"></span>
           <span>balcão da JUNA</span>
         </div>
+      </div>
+    </section>
+
+    <section class="game" id="game">
+      <div class="game-stage">
+        <p class="eyebrow">PROVADOR</p>
+        <h2>Escolhe a lente.<br><em>Troca o olhar.</em></h2>
+        <p class="game-now" id="gameNow">Olhos originais do avatar</p>
+        <div class="stage" id="stage">
+          <img src="juna.png" alt="Avatar da JUNA, pronto para provar as lentes">
+          <div class="eye-slot left" id="eyeLeft"></div>
+          <div class="eye-slot right" id="eyeRight"></div>
+        </div>
+      </div>
+      <div class="game-picker" aria-label="Lentes para provar">
+        <div id="picker"></div>
       </div>
     </section>
 
@@ -299,5 +319,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
